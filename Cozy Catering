@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Catering!</title>
+	
+	<style>
+		body {margin: 0px; background-color: #DBDBDB}
+		.main_page {content: ""; display: table; clear: both}
+		.side_pic {}
+		.left_container {float: left; width: 700px; height: 760px; display: inline}
+		.right_container {display: inline; float: right; width: 734px; height: 150px; text-align: center}
+		img {width: 100%; height: 765px}
+		.right_text {transform: translate(0px, 200px); font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; font-size: 50px}
+		.name {color: #FFFFFF; font-size: 70px; background-color: #4682B4; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; width: 100%; height: 100px; padding: 15px}
+		a {padding: 14px; color: #4682B4; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; margin: 20px}
+		a:hover, a:active {background-color: #FFFFFF}
+		.top-spacing {margin-top: 15px}
+		
+	</style>
+</head>
+
+<body>
+	<div class="main_page">
+		<div class="left_container">
+			<div class="side_pic">
+			<img src="LargeTableImage.jpeg" alt="Lovely Platter">
+			</div>
+		</div>
+
+		<div class="right_container">
+			<div class="name"><strong>COZY Catering</strong></div>
+			<div class="navi">
+				<br>
+				<br>
+				<a><strong>Home</strong></a>
+				<a href="" style="text-decoration: none"><strong>Our Services</strong></a>
+				<a href="" style="text-decoration: none"><strong>Lunch Menu</strong></a>
+				<a href="" style="text-decoration: none"><strong>Dinner Menu</strong></a>
+				<br>
+				<br>
+				<div class="top-spacing"></div>
+				<a href="" style="text-decoration: none"><strong>Customer Reviews</strong></a>
+				<a href="" style="text-decoration: none"><strong>Our Locations</strong></a>
+				<a href="" style="text-decoration: none"><strong>Contact Us</strong></a>
+				
+			</div>
+			
+			<div class="right_text"><strong>Need a new caterer? <br> Allow us to introduce ourselves...</strong></div>
+		</div>
+	</div>
+</body>
+</html>
