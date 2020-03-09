@@ -1,9 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Customer Reviews</title>
-<link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Customer Reviews</title>
+	<link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
+	<link href="reviews.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+	<script>
+    $(document).ready(function(){
+          $(".review").slideDown("slow");
+    });
+  </script>
 </head>
 	<style>
 		.name {text-align: center; width: 98%; height: 100px; padding: 15px}
@@ -12,7 +19,8 @@
 
 <body>
 	<div class="name"><strong>COZY Catering</strong></div>
-	
+
+	<!-- Navbar -->
 	<div class="navi">
 		<br>
 		<br>
@@ -23,9 +31,53 @@
 		<a href="Customer Reviews.html" style="text-decoration: none; background-color: #FFFFFF"><strong>Customer Reviews</strong></a>
 		<a href="Our Locations.html" style="text-decoration: none"><strong>Our Locations</strong></a>
 		<a href="Contact Us.html" style="text-decoration: none"><strong>Contact Us</strong></a>
-		
 		<div class="top-spacing"></div>
-		<hr>	
-		</div>
+		<hr>
+	</div>
+	<!-- Page content -->
+	<h1>Reviews</h1>
+	<h2>Check out with others have to say...</h2>
+	<div class="review">
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<p>
+			I'm so happy I chose COZY catering to cater my wedding. It was truly
+			a night to remember-- and the food at a lot to do with that! We asked them
+			to make us a special dish that combined the cultures of both my
+			new husband and I, and they were more than willing to accomadate our
+			soecial request. If you're on the fence about COZY catering, just go for it.
+			I'd give them a 10/10. Highly recommend.
+		</p>
+	</div>
+	<div class="review">
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<p>
+			Ahhhh I love COZY catering! My girlfriends and I hit them up EVERY
+			time we have a party because their food is Insta-worthy!!!
+		</p>
+	</div>
+	<div class="review">
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<img class="star" src="star.png"></img>
+		<p>
+			This catering company was pretty good. Short of amazing, but not by far.
+			My daughter used this company to cater her 23rd birthday party. If I have
+			any events that need catering I'll keep them in mind.
+		</p>
+	</div>
+	<div class="review">
+		<img class="star" src="Images/star.png"></img>
+		<img class="star" src="Images/star.png"></img>
+		<img class="star" src="Image/star.png"></img>
+		<p>
+			Better than average. Will use them again for the next office luncheon.
+		</p>
+	</div>
 </body>
 </html>
