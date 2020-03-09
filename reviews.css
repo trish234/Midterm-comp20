@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1 {
+  text-align: center;
+}
+.review {
+  display: none;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: lightblue;
+}
+.star {
+  position: relative;
+  height: 30px;
+}
