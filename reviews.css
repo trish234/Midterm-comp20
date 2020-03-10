@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#reviews-page {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+}
 h1 {
   text-align: center;
 }
