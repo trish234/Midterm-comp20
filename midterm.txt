@@ -1,0 +1,53 @@
+Midterm Project
+
+Names of Group Members:
+  Trisha Cox
+
+URL of site:
+  https://trish234.github.io/Midterm-comp20/
+
+Info about the business:
+  COZY Catering is a catering business that provides meal prep, event setup,
+  food delivery, and clean up to its customers. This website will help them
+  land more clients by giving potential clients a place to learn about
+  their services and menu. They can also see positive reviews from other
+  customers which will make them more likely to hire COZY Catering.
+
+A section of code we're proud of:
+
+How we met each project requirement:
+  at least 7 pages
+    - We have at least 7 pages.
+  external and internal style sheet
+    - We have multiple external style sheets
+    - Most pages have an internal style sheet
+  fixed page elements (navigation/header/footer) as appropriate per page
+    - We have a header we both the name of the business and a menu of links
+      that is on every page of the site
+  consistent look and feel across all pages
+    - We use the same fonts and colors for most parts of the site
+  incorporates Javascript and jQuery
+    - Our "Contact Us" page incorporates Javascript
+    - Our "Reviews" page incorporates jQuery
+  include a jQuery "special effect" (animation, fade, etc)
+    - The jQuery on the "Reviews" page is a slideDown() special effect
+  includes a form
+    - The "Contact Us" page has a form
+  at least one page must have multiple columns
+    - The "Services" page has multiple columns
+  responsive and mobile friendly - must pass this test: https://search.google.com/test/mobile-friendly (Links to an external site.)
+    - It passes the test
+  works online
+    - It works online
+  no broken links
+    - No links are broken
+  no "lorum ipsum" content
+    - All content is real
+
+  How each team member contributed:
+    - Caleb came up with the homepage, header, and overall design of the site,
+      and also made the "Our Services" page.
+    - Trisha made the "Customer Reviews" and "Our Locations" pages, and also
+      helped make the site responsive.
+    - Asiyah made the "Lunch Menu" and "Dinner Menu" pages.
+    - Zayyad made the "Contact Us" page.
