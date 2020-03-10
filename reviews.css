@@ -6,6 +6,11 @@
 }
 h1 {
   text-align: center;
+  color: #4682B4;
+}
+h2 {
+  text-align: center;
+  color: #4682B4;
 }
 .review {
   display: none;
