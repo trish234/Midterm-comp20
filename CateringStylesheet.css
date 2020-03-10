@@ -3,6 +3,6 @@
 
 body {margin: 0px; background-color: #DBDBDB}
 div.name {color: #FFFFFF; background-color: #4682B4; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"}
-a {padding: 14px; color: #4682B4; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; margin: 20px}
+a {padding: 14px; color: #4682B4; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"}
 a:hover, a:active {background-color: #FFFFFF}
 div.top-spacing {margin-top: 15px}
