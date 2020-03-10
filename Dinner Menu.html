@@ -11,8 +11,8 @@
 			font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 		}
 
-		.name {text-align: center; width: 98%; height: 100px; padding: 15px}
-		.navi {text-align: center}
+		.name {position: relative; text-align: center; width: 98%; height: 100px; padding: 15px; font-size: 70px}
+		.navi {position: relative; text-align: center}
 
 		.vertical-menu {
 		  width: 200px;
@@ -36,6 +36,34 @@
 		  background-color: #4CAF50;
 		  color: white;
 		}
+		
+		@media screen and (max-width:1250px) 
+			{
+				.navi {width: 100%; margin: 0px}
+				
+			}
+		@media screen and (max-width: 935px)
+			{
+				.navi {font-size: 12px}
+			}
+		@media screen and (max-width: 750px)
+			{
+				.navi {font-size: 10px}
+			}
+		@media screen and (max-width: 660px)
+			{
+				.navi {font-size: 8px}
+			}
+		@media screen and (max-width: 570px)
+			{
+				.navi {font-size: 7px}
+				.name {font-size: 60px}
+			}
+		@media screen and (max-width: 520px)
+			{
+				.navi {font-size: 6px}
+				.name {font-size: 55px}
+			}
 
 	</style>
 
