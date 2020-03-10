@@ -1,13 +1,41 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Lunch Menu</title>
 <link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
 </head>
 	<style>
+
+		html, body{
+			text-align: center;
+		}
+
 		.name {text-align: center; width: 98%; height: 100px; padding: 15px}
 		.navi {text-align: center}
+
+		.vertical-menu {
+		  width: 200px;
+		  height: 200px;
+		  overflow-y: auto;
+		}
+
+		.vertical-menu a {
+		  background-color: #eee;
+		  color: black;
+		  display: block;
+		  padding: 12px;
+		  text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+		  background-color: #ccc;
+		}
+
+		.vertical-menu a.active {
+		  background-color: #4CAF50;
+		  color: white;
+		}
+
 	</style>
 
 <body>
@@ -26,6 +54,159 @@
 		
 		<div class="top-spacing"></div>
 		<hr>	
-		</div>
+	</div>
+
+	<script language="javascript">
+
+		function MenuItem(name, cost)
+		{
+			this.name = name;
+			this.cost=cost;
+		}
+
+		menuItems = new Array(
+			new MenuItem("Rice and Chicken", 4.5),
+			new MenuItem("Pounded Yam and Vegetable Soup", 6.25),
+			new MenuItem("Yam and Egg", 5.25),
+			new MenuItem("Small chops", 6.5),
+			new MenuItem("Shawarma", 6.5),
+			new MenuItem("Soda", 2.35)
+		);
+
+		function makeSelect(name, minRange, maxRange)
+		{
+			var t= "";
+			t = "<select name='" + name + "' size='1'>";
+			for (j=minRange; j<=maxRange; j+=10)
+			   t += "<option>" + j + "</option>";
+			t += "</select>"; 
+			return t;
+		}
+
+		function updateCost(event)
+		{
+			  var item = event.target; 
+		      var index_of_item = item.name.slice(-1);
+		      var quantity = item.value;   
+		      var total_item = quantity * menuItems[index_of_item].cost;
+		      var rounded_item = total_item.toFixed(2);
+		      document.getElementsByName("cost")[index_of_item].value = rounded_item;
+
+		      finalizeValues();
+		}
+	</script>
+
+	<h1 align = "center">Cozy Catering</h1>
+	<div align = "center">
+	<form>
+		<table border="0" cellpadding="3">
+			  <tr>
+			    <th>Select Item</th>
+			    <th>Item Name</th>
+			    <th>Cost Each</th>
+			    <th>Total Cost</th>
+			  </tr>
+			<script language="javascript">
+				  var s = "";
+				  for (i=0; i< menuItems.length; i++)
+				  {
+					  s += "<tr><td>";
+					  s += makeSelect("quan" + i, 0, 100);
+					  s += "</td><td>" + menuItems[i].name + "</td>";
+					  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
+					  s += "<td>$<input type='text' name='cost'/></td></tr>";
+				  }
+				  document.writeln(s);
+
+				   for (var i = 0; i < menuItems.length; i++) {
+					
+						document.getElementsByName("quan" + i)[0].onchange = updateCost;
+				  	}
+
+				  	for (var j = 0; j < menuItems.length; j++){
+				  		first_val = parseFloat("0");
+				  		document.getElementsByName("cost")[j].value = first_val.toFixed(2);
+				  	}
+
+				    function updateCost(event)
+					{
+					  var item = event.target; 
+				      var index_of_item = item.name.slice(-1);
+				      var quantity = item.value;   
+				      var total_item = quantity * menuItems[index_of_item].cost;
+				      var rounded_item = total_item.toFixed(2);
+				      document.getElementsByName("cost")[index_of_item].value = rounded_item;
+
+				      finalizeValues();
+					}
+
+		   </script>
+		</table>
+
+	<div align="center">
+
+		<p> <b>Subtotal:</b> <br>
+	   $<input type="text"  name='subtotal' id="subtotal" />
+		</p>
+		<p> <b>Mass tax 6.25%:</b> <br>
+		  $<input type="text"  name='tax' id="tax" />
+		</p>
+		<p><b>Total:</b> <br> $<input type="text"  name='total' id="total" />
+		</p>
+
+	 </div>
+
+	<script language = "javascript">
+	
+		var first_zero = parseFloat("0");
+		document.getElementById("subtotal").value = first_zero.toFixed(2);
+		document.getElementById("tax").value = first_zero.toFixed(2);
+
+		document.getElementById("total").value = first_zero.toFixed(2);
+
+
+		function finalizeValues()
+		{
+			var subtotal = 0;
+
+			for ( var i = 0; i < menuItems.length; i++){
+				subtotal = parseFloat(subtotal);
+
+				if(document.getElementsByName("cost")[i].value == ""){
+					var zero = parseFloat("0");
+
+					document.getElementsByName("cost")[i].value = zero.toFixed(2);
+				}
+
+				var added_cost = document.getElementsByName("cost")[i].value;
+				var float_subtotal = parseFloat(added_cost);
+				subtotal = subtotal + float_subtotal;
+			}
+
+
+			var float_subtotal_final = parseFloat(subtotal);
+			document.getElementById("subtotal").value = subtotal.toFixed(2);
+			document.getElementById("tax").value = (subtotal * 0.0625).toFixed(2);
+
+			document.getElementById("total").value = (subtotal + (subtotal * 0.0625)).toFixed(2);
+
+		}
+
+</script>
+
+<div id = "finalmessage"> </div>
+
+<button type = "button" value = "Check Out" > 
+
+	<a href="Check out.html" style="text-decoration: none">
+		Check Out
+	</a>
+
+</button>
+
+</form>
+
+</div>
+
 </body>
 </html>
