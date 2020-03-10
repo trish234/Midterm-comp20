@@ -2,21 +2,111 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Contact Us</title>
+	<title>Contact Us</title>
 	<link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
-</head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<style>
 		.name {text-align: center; width: 98%; height: 100px; padding: 15px}
 		.navi {text-align: center}
+
+		/* Style inputs with type="text", select elements and textareas */
+		input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px; 
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box; 
+		margin-top: 6px; 
+		margin-bottom: 16px; 
+		resize: vertical;
+		}
+
+		/* Style the submit button with a specific background color etc */
+		input[type=submit] {
+		background-color: #4682B4;
+		color: #FFFFFF;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		}
+
+		/* When moving the mouse over the submit button, add a darker green color */
+		input[type=submit]:hover {
+		background-color: #063A50;
+		}
+
+		/* Add padding around the form */
+		.container {
+		border-radius: 5px;
+		padding: 20px;
+		}
+
+		/* Style the introductory text */
+		.intro {
+		padding: 12px;
+		font-size: 24px;
+		}
+
+		.footer-space {
+			height: 15px;
+			margin-bottom: 15px;
+		}
+
 	</style>
 
+	<script lang="javascript">
+
+		/* Function to ensure that a phone number matches the correct format */
+		function validatePhone() 
+		{
+			var inputPhone = document.getElementById("phone").value;
+			var validPhone = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
+			if (inputPhone.match(validPhone)) {
+				return true;
+			}
+			/* Instruct user to re-enter and clear the text field */
+			document.getElementById("phone").value = "";
+			document.getElementById("phone").focus();
+			alert("Please enter a valid phone number");
+			return false;
+		}
+
+		/* Function to ensure that an email matches the correct format */
+		function validateEmail() 
+		{
+			var inputEmail = document.getElementById("email").value;
+			var validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (inputEmail.match(validEmail)){
+				return true;
+			}
+			/* Instruct user to re-enter and clear the text field */
+			document.getElementById("email").value = "";
+			document.getElementById("email").focus();
+			alert("Please enter a valid email address");
+			return false;
+		}
+
+		/* Funtion to validate all text fields upon submission */
+		function validate()
+		{
+			/* By using all sub-validation processes */
+			if (validateEmail() && validatePhone()) {
+				return true;
+			}
+			return false;
+		}
+
+	</script>
+
+</head>
 <body>
 	<div class="name"><strong>COZY Catering</strong></div>
 	
 	<div class="navi">
 		<br>
 		<br>
-		<a href="index.html" style="text-decoration: none"><strong>Home</strong></a>
+		<a href="Homepage.html" style="text-decoration: none"><strong>Home</strong></a>
 		<a href="Our Services.html" style="text-decoration: none"><strong>Our Services</strong></a>
 		<a href="Lunch Menu.html" style="text-decoration: none"><strong>Lunch Menu</strong></a>
 		<a href="Dinner Menu.html" style="text-decoration: none"><strong>Dinner Menu</strong></a>
@@ -26,6 +116,48 @@
 		
 		<div class="top-spacing"></div>
 		<hr>	
-		</div>
+	</div>
+
+	<div class="intro">
+		<h1>Contact Us</h1>
+		<p style="font-family: cursive;">
+			At COZY Catering we value your satisfaction because what else are we here for? <br>
+			You can reach us at...
+		</p>
+	</div>
+
+	<div class="contact" style="font-family: cursive; margin-left: 15px; margin-bottom: 15px;">
+		<bold>24 Alltown Road, Cedar Rapids, IA 08032</bold> 
+		<bold style="float: right; margin-right: 15px;">85 Courtail Circle, Lafyette, LA 09485</bold> <br/>
+
+		<i class="material-icons">call:</i> 319-627-3030  
+		<div style="float: right; margin-right: 15px;"><i class="material-icons">call:</i> 337-617-4139</div> <br/>
+		
+		<i class="material-icons">email:</i> contactIA@cozycatering.com
+		<div style="float: right; margin-right: 15px;"><i class="material-icons">email:</i> contactLA@cozycatering.com</div> <br/>
+	</div>
+
+	<div class="container">
+		<form id="inputForm">
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="firstname" placeholder="Please enter your first name...">
+		
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lastname" placeholder="Please enter your last name...">
+		
+			<label for="phone">Phone Number</label>
+			<input type="text" id="phone" name="phone" placeholder="Please enter your phone number..." onchange="validatePhone()">
+		
+			<label for="lname">Email Address</label>
+		  	<input type="text" id="email" name="email" placeholder="Please enter your email address..." onchange="validateEmail()">
+
+			<input type="submit" value="Submit" onsubmit="validate()">
+		</form>
+	</div>
+
+	<div class="footer-space">
+		<!-- This is footer space to create some spacing before the end of the page -->
+		<!-- Its content may be changed to actual footer material -->
+	</div>
 </body>
 </html>
