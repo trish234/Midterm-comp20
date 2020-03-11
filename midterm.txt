@@ -15,6 +15,11 @@ Info about the business:
   customers which will make them more likely to hire COZY Catering.
 
 A section of code we're proud of:
+  .homepage {background-image: url("LargeTableImage.jpeg"); height: 565px; opacity: 1.0; position: relative}
+	.homepage:hover .overlay {opacity: 1.0}
+	.overlay {transition: 0.5s ease; opacity: 0}
+  
+  We are particulary excited about the above lines of code because they enable a cool effect to take place when the user hovers over the image on the homepage. Essentially, the homepage appears to contain just a logo, navigation bar, and a nice image of catering. But upon hovering over the image, the user will reveal a message inviting them to check out the rest of our website and services. It's a small touch that we believe might intrigue potential customers.
 
 How we met each project requirement:
   at least 7 pages
