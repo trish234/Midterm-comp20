@@ -4,7 +4,7 @@
 	<title>Dinner Menu</title>
 	<link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
 
-	s<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale-1.0">
 
 	<style>
@@ -118,8 +118,8 @@
 		<br>
 		<a href="index.html" style="text-decoration: none"><strong>Home</strong></a>
 		<a href="Our Services.html" style="text-decoration: none"><strong>Our Services</strong></a>
-		<a href="Lunch Menu.html" style="text-decoration: none"><strong>Lunch Menu</strong></a>
-		<a href="Dinner Menu.html" style="text-decoration: none; background-color: #FFFFFF"><strong>Dinner Menu</strong></a>
+		<a href="Lunch Menu.html" style="text-decoration: none; background-color: #FFFFFF"><strong>Lunch Menu</strong></a>
+		<a href="Dinner Menu.html" style="text-decoration: none"><strong>Dinner Menu</strong></a>
 		<a href="Customer Reviews.html" style="text-decoration: none"><strong>Customer Reviews</strong></a>
 		<a href="Our Locations.html" style="text-decoration: none"><strong>Our Locations</strong></a>
 		<a href="Contact Us.html" style="text-decoration: none"><strong>Contact Us</strong></a>
@@ -216,18 +216,17 @@
 		   </script>
 		</table>
 
-	<div align="center">
+	<div align="center" style="font-size: 30px">
 
 		<p> <b>Subtotal:</b> <br>
-	   $<input type="text"  name='subtotal' id="subtotal" />
+	   $<input type="text"  name='subtotal' id="subtotal" style = 'font-size: 30px'/>
 		</p>
 		<p> <b>Mass tax 6.25%:</b> <br>
-		  $<input type="text"  name='tax' id="tax" />
+		  $<input type="text"  name='tax' id="tax" style = 'font-size: 30px'/>
 		</p>
-		<p><b>Total:</b> <br> $<input type="text"  name='total' id="total" />
+		<p><b>Total:</b> <br> $<input type="text"  name='total' id="total" style = 'font-size: 30px'/>
 		</p>
 
-	 </div>
 
 	<script language = "javascript">
 	
@@ -238,7 +237,7 @@
 		document.getElementById("total").value = first_zero.toFixed(2);
 
 
-		function finalizeValues()s
+		function finalizeValues()
 		{
 			var subtotal = 0;
 
@@ -265,11 +264,13 @@
 
 		}
 
-</script>
+	</script>
+
+</div>
 
 <div id = "finalmessage"> </div>
 
-<button type = "button" value = "Check Out" style = 'font-size: 30px's> 
+<button type = "button" value = "Check Out" style = 'font-size: 30px'> 
 
 	<a href="Check out.html" style="text-decoration: none">
 		Check Out
