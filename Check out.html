@@ -1,13 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Dinner Menu</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+	<title>Check Out</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link href="CateringStylesheet.css" rel="stylesheet" type="text/css">
 
-	s<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+	<style type="text/css">
+		
+		.row {
+		  display: -ms-flexbox; /* IE10 */
+		  display: flex;
+		  -ms-flex-wrap: wrap; /* IE10 */
+		  flex-wrap: wrap;
+		  margin: 0 -16px;
+		}
 
-	<style>
+		.col-25 {
+		  -ms-flex: 25%; /* IE10 */
+		  flex: 25%;
+		}
+
+		.col-50 {
+		  -ms-flex: 50%; /* IE10 */
+		  flex: 50%;
+		}
+
+		.col-75 {
+		  -ms-flex: 75%; /* IE10 */
+		  flex: 75%;
+		}
+
+		.col-25,
+		.col-50,
+		.col-75 {
+		  padding: 0 16px;
+		}
+
+		.container {
+		  background-color: #f2f2f2;
+		  padding: 5px 20px 15px 20px;
+		  border: 1px solid lightgrey;
+		  border-radius: 3px;
+		}
+
+		input[type=text] {
+		  width: 100%;
+		  margin-bottom: 20px;
+		  padding: 12px;
+		  border: 1px solid #ccc;
+		  border-radius: 3px;
+		}
+
+		label {
+		  margin-bottom: 10px;
+		  display: block;
+		}
+
+		.icon-container {
+		  margin-bottom: 20px;
+		  padding: 7px 0;
+		  font-size: 24px;
+		}
+
+		.btn {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 12px;
+		  margin: 10px 0;
+		  border: none;
+		  width: 100%;
+		  border-radius: 3px;
+		  cursor: pointer;
+		  font-size: 17px;
+		}
+
+		.btn:hover {
+		  background-color: #45a049;
+		}
+
+		span.price {
+		  float: right;
+		  color: grey;
+		}
+
+		@media (max-width: 800px) {
+		  .row {
+		    flex-direction: column-reverse;
+		  }
+		  .col-25 {
+		    margin-bottom: 20px;
+		  }
+		}
 
 		html, body, input{
 			text-align: center;
@@ -108,12 +195,14 @@
 
 	</style>
 
-</head>
 
+</head>
 <body>
+
+
 	<div class="name"><strong>COZY Catering</strong></div>
 	
-	<div class="navi" style="font-size: 30px">
+	<div class="navi" style = 'font-size: 30px'>
 		<br>
 		<br>
 		<a href="index.html" style="text-decoration: none"><strong>Home</strong></a>
@@ -128,158 +217,113 @@
 		<hr>	
 	</div>
 
-	<script language="javascript">
-
-		function MenuItem(name, cost)
-		{
-			this.name = name;
-			this.cost=cost;
-		}
-
-		menuItems = new Array(
-			new MenuItem("Goat meat pepper soup", 4.5),
-			new MenuItem("Boli and Smoked fish", 6.25),
-			new MenuItem("Garri and groundnut", 5.25),
-			new MenuItem("Small chops", 4.5),
-			new MenuItem("Shawarma", 12.5),
-			new MenuItem("Fruits", 2.35),
-			new MenuItem("Chai tea", 1.95)
-		);
-
-		function makeSelect(name, minRange, maxRange)
-		{
-			var t= "";
-			t = "<select name='" + name + "' size='1' style = 'font-size: 30px'>";
-			for (j=minRange; j<=maxRange; j+=10)
-			   t += "<option style = 'font-size: 30px'>" + j + "</option>";
-			t += "</select>"; 
-			return t;
-		}
-
-		function updateCost(event)
-		{
-			  var item = event.target; 
-		      var index_of_item = item.name.slice(-1);
-		      var quantity = item.value;   
-		      var total_item = quantity * menuItems[index_of_item].cost;
-		      var rounded_item = total_item.toFixed(2);
-		      document.getElementsByName("cost")[index_of_item].value = rounded_item;
-
-		      finalizeValues();
-		}
-	</script>
-
-	<h1 align = "center" style = "font-size: 30px">Cozy Catering</h1>
-	<div align = "center" style = 'font-size: 30px'>
-	<form style = 'font-size: 30px'>
-		<table border="0" cellpadding="3" style = 'font-size: 30px'>
-			  <tr>
-			    <th>Select Item</th>
-			    <th>Item Name</th>
-			    <th>Cost Each</th>
-			    <th>Total Cost</th>
-			  </tr>
-			<script language="javascript">
-				  var s = "";
-				  for (i=0; i< menuItems.length; i++)
-				  {
-					  s += "<tr><td>";
-					  s += makeSelect("quan" + i, 0, 100);
-					  s += "</td><td>" + menuItems[i].name + "</td>";
-					  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
-					  s += "<td>$<input type='text' name='cost'/></td></tr>";
-				  }
-				  document.writeln(s);
-
-				   for (var i = 0; i < menuItems.length; i++) {
-					
-						document.getElementsByName("quan" + i)[0].onchange = updateCost;
-				  	}
-
-				  	for (var j = 0; j < menuItems.length; j++){
-				  		first_val = parseFloat("0");
-				  		document.getElementsByName("cost")[j].value = first_val.toFixed(2);
-				  	}
-
-				    function updateCost(event)
-					{
-					  var item = event.target; 
-				      var index_of_item = item.name.slice(-1);
-				      var quantity = item.value;   
-				      var total_item = quantity * menuItems[index_of_item].cost;
-				      var rounded_item = total_item.toFixed(2);
-				      document.getElementsByName("cost")[index_of_item].value = rounded_item;
-
-				      finalizeValues();
-					}
-
-		   </script>
-		</table>
-
-	<div align="center">
-
-		<p> <b>Subtotal:</b> <br>
-	   $<input type="text"  name='subtotal' id="subtotal" />
-		</p>
-		<p> <b>Mass tax 6.25%:</b> <br>
-		  $<input type="text"  name='tax' id="tax" />
-		</p>
-		<p><b>Total:</b> <br> $<input type="text"  name='total' id="total" />
-		</p>
-
-	 </div>
-
-	<script language = "javascript">
-	
-		var first_zero = parseFloat("0");
-		document.getElementById("subtotal").value = first_zero.toFixed(2);
-		document.getElementById("tax").value = first_zero.toFixed(2);
-
-		document.getElementById("total").value = first_zero.toFixed(2);
+	<h2> Checkout Form</h2>
 
 
-		function finalizeValues()
-		{
-			var subtotal = 0;
+	<div class="row">
+	  <div class="col-75">
+	    <div class="container">
+	      <form>
+	      
+	        <div class="row">
+	          <div class="col-50">
+	            <h3>Billing Address</h3>
+	            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+	            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
 
-			for ( var i = 0; i < menuItems.length; i++){
-				subtotal = parseFloat(subtotal);
+	            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+	            <input type="text" id="email" name="email" placeholder="john@example.com">
 
-				if(document.getElementsByName("cost")[i].value == ""){
-					var zero = parseFloat("0");
+	            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+	            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
 
-					document.getElementsByName("cost")[i].value = zero.toFixed(2);
+	            <label for="city"><i class="fa fa-institution"></i> City</label>
+	            <input type="text" id="city" name="city" placeholder="New York">
+
+	            <div class="row">
+	              <div class="col-50">
+	                <label for="state">State</label>
+	                <input type="text" id="state" name="state" placeholder="NY">
+	              </div>
+	              <div class="col-50">
+	                <label for="zip">Zip</label>
+	                <input type="text" id="zip" name="zip" placeholder="10001">
+	              </div>
+	            </div>
+	          </div>
+
+	          <div class="col-50">
+	            <h3>Payment</h3>
+	            <label for="fname">Accepted Cards</label>
+	            <div class="icon-container">
+	              <i class="fa fa-cc-visa" style="color:navy;"></i>
+	              <i class="fa fa-cc-amex" style="color:blue;"></i>
+	              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+	              <i class="fa fa-cc-discover" style="color:orange;"></i>
+	            </div>
+	            <label for="cname">Name on Card</label>
+	            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+
+	            <label for="ccnum">Credit card number</label>
+	            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+	            <label for="expmonth">Exp Month</label>
+	            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+	            <div class="row">
+	              <div class="col-50">
+	                <label for="expyear">Exp Year</label>
+	                <input type="text" id="expyear" name="expyear" placeholder="2018">
+	              </div>
+	              <div class="col-50">
+	                <label for="cvv">CVV</label>
+	                <input type="text" id="cvv" name="cvv" placeholder="352">
+	              </div>
+	            </div>
+	          </div>
+	          
+	        </div>
+	        <label>
+	          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+	        </label>
+	        <input type="submit" value="Continue to checkout" class="btn" onclick="message()">
+
+	      </form>
+
+	      <div id = "good-bye" > </div>
+
+			<script type="text/javascript">
+				
+				function message()
+				{
+					//document.getElementById("good-bye").innerHTML = "Thank you for shopping with Cozy Catering Your order is been processed thank you."
+
+					document.write("Thank you for shopping with Cozy Catering Your order is been processed.");
+					//location.replace(index.html);
+					window.location.replace = "index.html";
+
+					validate();
+
 				}
 
-				var added_cost = document.getElementsByName("cost")[i].value;
-				var float_subtotal = parseFloat(added_cost);
-				subtotal = subtotal + float_subtotal;
-			}
+				function validate()
+				{
+					var name = document.getElementById("fname").checked;
+
+					if ( name == ""){
+						alert("Please enter your name");
+					}
+				}
+
+			</script>
 
 
-			var float_subtotal_final = parseFloat(subtotal);
-			document.getElementById("subtotal").value = subtotal.toFixed(2);
-			document.getElementById("tax").value = (subtotal * 0.0625).toFixed(2);
+	    </div>
+	  </div>
 
-			document.getElementById("total").value = (subtotal + (subtotal * 0.0625)).toFixed(2);
+	</div>
 
-		}
 
-</script>
-
-<div id = "finalmessage"> </div>
-
-<button type = "button" value = "Check Out" style = 'font-size: 30px's> 
-
-	<a href="Check out.html" style="text-decoration: none">
-		Check Out
-	</a>
-
-</button>
-
-</form>
-
-</div>
 
 </body>
 </html>
