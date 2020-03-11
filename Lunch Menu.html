@@ -9,7 +9,7 @@
 
 	<style>
 
-		html, body, input{
+		input{
 			text-align: center;
 			font-size: 30px;
 		}
@@ -40,6 +40,68 @@
 		  color: white;
 		}
 
+
+		.name {text-align: center; position: relative; width: 98%; height: 100px; padding: 15px; font-size: 70px}
+
+		.navi {text-align: center; position: relative}
+
+
+		
+		@media screen and (max-width:1250px) 
+
+			{
+
+				.navi {width: 100%; margin: 0px}
+
+				
+
+			}
+
+		@media screen and (max-width: 935px)
+
+			{
+
+				.navi {font-size: 12px}
+
+			}
+
+		@media screen and (max-width: 750px)
+
+			{
+
+				.navi {font-size: 10px}
+
+			}
+
+		@media screen and (max-width: 660px)
+
+			{
+
+				.navi {font-size: 8px}
+
+			}
+
+		@media screen and (max-width: 570px)
+
+			{
+
+				.navi {font-size: 7px}
+
+				.name {font-size: 60px}
+
+			}
+
+		@media screen and (max-width: 520px)
+
+			{
+
+				.navi {font-size: 6px}
+
+				.name {font-size: 55px}
+
+			}
+
+
 		table, th, td{
 			font-size: 30px;
 		}
@@ -51,7 +113,7 @@
 <body>
 	<div class="name"><strong>COZY Catering</strong></div>
 	
-	<div class="navi" style="font-size: 30px">
+	<div class="navi">
 		<br>
 		<br>
 		<a href="index.html" style="text-decoration: none"><strong>Home</strong></a>
@@ -153,7 +215,7 @@
 		   </script>
 		</table>
 
-	<div align="center">
+	<div align="center" style="font-size: 30px">
 
 		<p> <b>Subtotal:</b> <br>
 	   $<input type="text"  name='subtotal' id="subtotal" style = 'font-size: 30px'/>
@@ -204,7 +266,7 @@
 
 </script>
 
-<div id = "finalmessage"> </div>
+<div id = "finalmessage" style="font-size: 30px"s> </div>
 
 <button type = "button" value = "Check Out" style = 'font-size: 30px'> 
 
